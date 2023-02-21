@@ -60,7 +60,8 @@ void blinkLED(void *parameters)
 // configurazione del sistema
 void setup()
 {
- long int delay_arg;
+   // variabile locale da passare al task
+   long int delay_arg;
 
   // Configurazione della seriale
   Serial.begin(115200);
@@ -93,7 +94,7 @@ void setup()
       APP_CPU_NUM         // core su cui far girare il task
   );
 
-  // resta in attesa che il semaforo binario venga restituito
+  // resta in attesa che il semaforo binario venga restituito dal task
   xSemaphoreTake(binSem, portMAX_DELAY);
 
   // segnalazione che il dato è stato inviato al task 1
