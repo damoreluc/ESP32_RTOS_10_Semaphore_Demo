@@ -21,10 +21,6 @@
 // dichiarazione di un semaforo (binario)
 static SemaphoreHandle_t binSem = NULL;
 
-// variabile globale condivisa
-static int shared_var = 0;
-
-
 //**********************************************************************
 // Tasks
 
@@ -88,7 +84,7 @@ void setup()
       blinkLED,           // funzione da richiamare nel task
       "Led Task",         // nome del task (etichetta utile per debug)
       1500,               // dimensione in byte dello stack per le variabili locali del task (minimo 768 byte)
-      (void*)&delay_arg,  // puntatore agli eventuali parametri da passare al task
+      (void*)&delay_arg,  // passaggio del parametro al task tramite puntatore
       1,                  // priorità del task
       NULL,               // eventuale task handle per gestire il task da un altro task
       APP_CPU_NUM         // core su cui far girare il task
