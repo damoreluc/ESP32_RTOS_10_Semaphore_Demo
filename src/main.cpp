@@ -9,6 +9,7 @@
  *   #define APP_CPU_NUM (1)
  *
  * Qui viene adoperata la APP_CPU
+ * riga aggiunta al commento per capire le fasi dello staging
  *
  */
 
